@@ -1,0 +1,25 @@
+.nav{
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     height: 50px;
+     background-color: #B2EBF2;
+     padding-top: 7px;
+
+}
+ul{
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     gap: 45px;
+}
+a{
+     text-decoration: none;
+}
+*{
+     margin: 0;
+     padding: 0;
+}
+img{
+     border-radius: 50%;
+}

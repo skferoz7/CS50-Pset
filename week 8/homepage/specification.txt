@@ -1,0 +1,33 @@
+HTML tags:
+main
+h1
+h2
+h3
+p
+head
+body
+html
+main
+div
+button
+ul
+a
+img
+link
+script
+
+CSS:
+color
+background-color
+text-size
+font-family
+height
+display
+padding
+width
+
+JavaScript implementation:
+for Dark mode
+
+Bootstrap implementation:
+heroes and features
