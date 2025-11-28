@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container" style="padding-top:20px; max-width:1100px;">
+
+    <h1>Your Tasks</h1>
+
+    <div class="mb-3">
+        <span class="badge bg-secondary">Total: {{ total }}</span>
+        <span class="badge bg-success">Completed: {{ completed }}</span>
+    </div>
+
+    <hr>
+
+    {% if tasks %}
+        <div class="list-group">
+            {% for task in tasks %}
+                <div class="list-group-item d-flex justify-content-between">
+
+                    <div>
+                        <div class="fw-bold">{{ task.title }}</div>
+                        <div class="small">{{ task.description }}</div>
+                        <div class="small">Category: {{ task.category or '-' }}</div>
+                        <div class="small">Due: {{ task.due_date or '-' }}</div>
+                      
+                    </div>
+
+                    <div class="text-end">
+                        {% if task.status and task.status|lower == "completed" %}
+                            <span class="badge bg-success">Completed</span>
+                        {% else %}
+                            <a class="btn btn-sm btn-outline-success"
+                               href="{{ url_for('complete', task_id=task.id) }}">
+                                Complete
+                            </a>
+                        {% endif %}
+
+                        <a class="btn btn-sm btn-outline-primary"
+                           href="{{ url_for('edit', task_id=task.id) }}">
+                            Edit
+                        </a>
+
+                        <a class="btn btn-sm btn-outline-danger"
+                           href="{{ url_for('delete', task_id=task.id) }}">
+                            Delete
+                        </a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No tasks available. Add one!</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

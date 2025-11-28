@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container" style="padding-top:36px; padding-bottom:36px; max-width:720px;">
+  <div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <h3 class="mb-1">Profile</h3>
+        <p class="mb-0 text-muted">Signed in as</p>
+        <h4 class="mt-2">{{ user.name }}</h4>
+      </div>
+
+      <div class="text-end">
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-danger mb-2">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
